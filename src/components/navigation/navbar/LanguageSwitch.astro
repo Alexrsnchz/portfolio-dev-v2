@@ -1,10 +1,51 @@
 ---
 import LanguageIcon from "../../../assets/icons/page/LanguageIcon.astro";
 import ChevronDownIcon from "../../../assets/icons/page/ChevronDownIcon.astro";
+import EsFlagIcon from "../../../assets/icons/flags/EsFlagIcon.astro";
+import UsFlagIcon from "../../../assets/icons/flags/UsFlagIcon.astro";
 ---
 
-<div class="flex items-center space-x-2">
+<div id="language-button" class="flex items-center relative space-x-1 cursor-pointer">
     <LanguageIcon class="w-5 h-5" />
     <span class="text-sm font-medium">ES</span>
-    <ChevronDownIcon class="mt-0.5 w-4 h-4" />
+    <ChevronDownIcon id="chevron-icon" class="mt-0.75 w-4 h-4 transition-transform duration-200 ease-in-out" />
+
+    <div id="language-menu" class="hidden absolute top-full mt-3 rounded-lg border border-gray-300 bg-gray-100">
+        <ul>
+            <li class="rounded-t-lg hover:bg-gray-200">
+                <a href="#" class="flex items-center px-3 py-2 space-x-2">
+                    <EsFlagIcon class="w-6 h-6" />
+                    <span class="font-medium">Español</span>
+                </a>
+            </li>
+            <li class="rounded-b-lg hover:bg-gray-200">
+                <a href="#" class="flex items-center px-3 py-2 space-x-2">
+                    <UsFlagIcon class="w-6 h-6" />
+                    <span class="font-medium">English</span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
+
+<script>
+    const languageButton = document.getElementById('language-button');
+    const languageMenu = document.getElementById('language-menu');
+    const chevronIcon = document.getElementById('chevron-icon');
+
+    // Toggles the language menu
+    languageButton?.addEventListener('click', () => {
+        languageMenu?.classList.toggle('hidden');
+        chevronIcon?.classList.toggle('rotate-180');
+    })
+
+    // Closes the language menu if outside click
+    document.addEventListener('click', (event) => {
+        const target = event.target as Node;
+
+        if (!languageButton?.contains(target)) {
+            languageMenu?.classList.add('hidden');
+            chevronIcon?.classList.remove('rotate-180');
+        }
+    });
+</script>
