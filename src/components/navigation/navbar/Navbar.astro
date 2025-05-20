@@ -2,10 +2,27 @@
 import NavLinks from './NavLinks.astro';
 import NavActions from "./NavActions.astro";
 ---
+
 <nav class="flex justify-center">
-    <div class="flex justify-between items-center px-8 py-4 mx-auto space-x-20 max-w-7xl bg-transparent">
+    <div id="navbar" class="flex justify-between items-center fixed top-0 z-50 px-8 py-4 mx-auto space-x-20 max-w-7xl rounded-lg bg-transparent transition-all duration-600 ease-in-out">
         <span class="font-semibold">Alexrsnchz.dev</span>
         <NavLinks />
         <NavActions />
     </div>
 </nav>
+
+<script>
+    const navbar = document.getElementById('navbar');
+
+    // Transforms the navbar when the page is scrolled
+    window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY > 10;
+
+        navbar?.classList.toggle('border', scrolled);
+        navbar?.classList.toggle('border-gray-300', scrolled);
+        navbar?.classList.toggle('bg-gray-200/30', scrolled);
+        navbar?.classList.toggle('backdrop-blur-md', scrolled);
+        navbar?.classList.toggle('shadow-md', scrolled);
+        navbar?.classList.toggle('translate-y-5', scrolled);
+    })
+</script>
