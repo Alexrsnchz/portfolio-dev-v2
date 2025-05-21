@@ -5,7 +5,7 @@ import NavActions from "./NavActions.astro";
 
 <nav class="flex justify-center">
     <div id="navbar" class="flex justify-between items-center fixed top-0 z-50 px-8 py-4 mx-auto space-x-20 max-w-7xl rounded-lg bg-transparent transition-all duration-600 ease-in-out">
-        <span class="font-semibold">Alexrsnchz.dev</span>
+        <span class="font-semibold text-gray-800 dark:text-gray-200">Alexrsnchz.dev</span>
         <NavLinks />
         <NavActions />
     </div>
@@ -13,6 +13,7 @@ import NavActions from "./NavActions.astro";
 
 <script>
     const navbar = document.getElementById('navbar');
+    const savedTheme = localStorage.getItem('theme');
 
     // Transforms the navbar when the page is scrolled
     window.addEventListener('scroll', () => {
@@ -20,7 +21,9 @@ import NavActions from "./NavActions.astro";
 
         navbar?.classList.toggle('border', scrolled);
         navbar?.classList.toggle('border-gray-300', scrolled);
+        navbar?.classList.toggle('dark:border-neutral-700', scrolled);
         navbar?.classList.toggle('bg-gray-200/30', scrolled);
+        navbar?.classList.toggle('dark:bg-neutral-800/30', scrolled);
         navbar?.classList.toggle('backdrop-blur-md', scrolled);
         navbar?.classList.toggle('shadow-md', scrolled);
         navbar?.classList.toggle('translate-y-5', scrolled);

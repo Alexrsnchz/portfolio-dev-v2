@@ -6,22 +6,22 @@ import UsFlagIcon from "../../../assets/icons/flags/UsFlagIcon.astro";
 ---
 
 <div id="language-button" class="flex items-center relative space-x-1 cursor-pointer">
-    <LanguageIcon class="w-5 h-5" />
-    <span class="text-sm font-medium">ES</span>
-    <ChevronDownIcon id="chevron-icon" class="mt-0.75 w-4 h-4 transition-transform duration-200 ease-in-out" />
+    <LanguageIcon class="w-5 h-5 text-gray-800 dark:text-gray-200" />
+    <span class="text-sm font-medium text-gray-800 dark:text-gray-200">ES</span>
+    <ChevronDownIcon id="chevron-icon" class="mt-0.75 w-4 h-4 text-gray-800 dark:text-gray-200 transition-transform duration-200 ease-in-out" />
 
-    <div id="language-menu" class="hidden absolute top-full mt-3 rounded-lg border border-gray-300 bg-gray-100">
+    <div id="language-menu" class="hidden absolute top-full mt-3 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100 dark:bg-neutral-800">
         <ul>
-            <li class="rounded-t-lg hover:bg-gray-200">
+            <li class="rounded-t-lg hover:bg-gray-200 dark:hover:bg-neutral-700">
                 <a href="#" class="flex items-center px-3 py-2 space-x-2">
                     <EsFlagIcon class="w-6 h-6" />
-                    <span class="font-medium">Español</span>
+                    <span class="font-medium text-gray-800 dark:text-gray-200">Español</span>
                 </a>
             </li>
-            <li class="rounded-b-lg hover:bg-gray-200">
+            <li class="rounded-b-lg hover:bg-gray-200 dark:hover:bg-neutral-700">
                 <a href="#" class="flex items-center px-3 py-2 space-x-2">
                     <UsFlagIcon class="w-6 h-6" />
-                    <span class="font-medium">English</span>
+                    <span class="font-medium text-gray-800 dark:text-gray-200">English</span>
                 </a>
             </li>
         </ul>
