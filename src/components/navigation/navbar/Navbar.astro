@@ -4,14 +4,15 @@ import NavActions from "./NavActions.astro";
 ---
 
 <nav class="flex justify-center">
-    <div id="navbar" class="flex justify-between items-center fixed top-0 z-50 px-8 py-4 mx-auto space-x-20 max-w-7xl rounded-lg border border-transparent bg-transparent transition-all duration-600 ease-in-out">
-        <a href="/home" class="font-semibold text-gray-800 dark:text-gray-200">Alexrsnchz</a>
+    <div id="navbar" class="flex justify-evenly items-center fixed top-0 z-50 px-8 py-4 mx-auto gap-20 max-w-7xl rounded-lg border border-transparent bg-transparent transition-all duration-600 ease-in-out">
+        <a href="#home" class="font-semibold text-gray-800 dark:text-gray-200">Alexrsnchz</a>
         <NavLinks />
         <NavActions />
     </div>
 </nav>
 
 <script>
+    // Obtains navbar element
     const navbar = document.getElementById('navbar');
 
     // Transforms the navbar (with Tailwind classes) when the page is scrolled
