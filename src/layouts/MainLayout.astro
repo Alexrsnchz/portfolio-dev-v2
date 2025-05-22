@@ -4,6 +4,17 @@ import './../styles/global.css';
 
 <html lang="es">
     <head>
+        <!-- Saved theme selector -->
+        <script>
+            (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+                document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+            })();
+        </script>
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="description" content="Alexrsnchz web developer portfolio">
@@ -15,7 +26,7 @@ import './../styles/global.css';
 
         <title>Portfolio</title>
     </head>
-    <body class="dark:bg-neutral-900">
+    <body class="bg-gray-50 dark:bg-neutral-900">
         <!-- Portfolio background -->
         <div>
             <!-- Site content -->

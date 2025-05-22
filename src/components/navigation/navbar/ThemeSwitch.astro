@@ -3,9 +3,9 @@ import SunIcon from "../../../assets/icons/page/SunIcon.astro";
 import MoonIcon from "../../../assets/icons/page/MoonIcon.astro";
 ---
 
-<button id="theme-button" class="cursor-pointer">
-    <SunIcon id="light-icon" class="w-5 h-5 text-gray-800 dark:text-gray-200" />
-    <MoonIcon id="dark-icon" class="hidden w-5 h-5 text-gray-800 dark:text-gray-200" />
+<button id="theme-button" class="relative w-5 h-5 cursor-pointer">
+    <SunIcon id="light-icon" class="absolute inset-0 w-5 h-5 opacity-100 text-yellow-500 transition-opacity duration-400" />
+    <MoonIcon id="dark-icon" class="absolute inset-0 w-5 h-5 opacity-0 text-purple-400 transition-opacity duration-400" />
 </button>
 
 <script>
@@ -14,29 +14,23 @@ import MoonIcon from "../../../assets/icons/page/MoonIcon.astro";
     const lightIcon = document.getElementById('light-icon');
     const darkIcon = document.getElementById('dark-icon');
 
-    // Obtains the saved theme if exists
-    const savedTheme = localStorage.getItem('theme');
+    // Applies the correct styles to the icons depending on the theme
+    function applyTheme() {
+        const isDark = document.documentElement.classList.contains('dark');
 
-    // Applies a theme based on the one saved in the local storage
-    if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-
-        lightIcon?.classList.add('hidden');
-        darkIcon?.classList.remove('hidden');
-    } else if (savedTheme === 'light') {
-        document.documentElement.classList.remove('dark');
-
-        lightIcon?.classList.remove('hidden');
-        darkIcon?.classList.add('hidden');
+        lightIcon?.classList.toggle('opacity-100', !isDark);
+        lightIcon?.classList.toggle('opacity-0', isDark);
+        darkIcon?.classList.toggle('opacity-0', !isDark);
+        darkIcon?.classList.toggle('opacity-100', isDark);
     }
+
+    applyTheme();
 
     // Changes theme when the button is clicked
     themeButton?.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.toggle('dark');
+        const darkTheme = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', darkTheme ? 'dark' : 'light');
 
-        lightIcon?.classList.toggle('hidden');
-        darkIcon?.classList.toggle('hidden');
-
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        applyTheme();
     });
 </script>
