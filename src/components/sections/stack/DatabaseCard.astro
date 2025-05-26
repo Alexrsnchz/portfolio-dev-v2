@@ -1,0 +1,41 @@
+---
+import DatabaseIcon from "@icons/general/DatabaseIcon.astro";
+import MySQLLogo from "@stack/database/MySQLLogo.astro";
+import PostgreSQLLogo from "@stack/database/PostgreSQLLogo.astro";
+import SQLiteLogo from "@stack/database/SQLiteLogo.astro";
+---
+<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-800">
+    <!-- Card title -->
+    <div class="flex items-center gap-2">
+        <div class="p-2 rounded-lg bg-neutral-700">
+            <DatabaseIcon class="w-8 h-8 text-white" />
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200">Database Management</h3>
+    </div>
+
+    <!-- Card content -->
+    <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <MySQLLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">MySQL</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <PostgreSQLLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">PostgreSQL</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <SQLiteLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">SQLite</span>
+        </div>
+    </div>
+</div>

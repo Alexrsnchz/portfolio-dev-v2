@@ -1,0 +1,76 @@
+---
+import ToolIcon from "@icons/general/ToolIcon.astro";
+import GitLogo from "@stack/tools/GitLogo.astro";
+import GitHubLogo from "@stack/tools/GitHubLogo.astro";
+import VSCodeLogo from "@stack/tools/VSCodeLogo.astro";
+import WebStormLogo from "@stack/tools/WebStormLogo.astro";
+import PostmanLogo from "@stack/tools/PostmanLogo.astro";
+import SwaggerLogo from "@stack/tools/SwaggerLogo.astro";
+import PrismaLogo from "@stack/database/PrismaLogo.astro";
+
+
+
+---
+<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-800">
+    <!-- Card title -->
+    <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-neutral-700">
+            <ToolIcon class="w-8 h-8 text-white" />
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200">Development Tools</h3>
+    </div>
+
+    <!-- Card content -->
+    <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <GitLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Git</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <GitHubLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">GitHub</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <VSCodeLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">VSCode</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <WebStormLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">WebStorm</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <PostmanLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Postman</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <SwaggerLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Swagger</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <PrismaLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Prisma</span>
+        </div>
+    </div>
+</div>

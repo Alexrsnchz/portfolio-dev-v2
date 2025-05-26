@@ -1,0 +1,65 @@
+---
+import ScreenIcon from "@icons/general/ScreenIcon.astro";
+import HTMLLogo from "@stack/frontend/HTMLLogo.astro";
+import CSSLogo from "@stack/frontend/CSSLogo.astro";
+import JavaScriptLogo from "@stack/frontend/JavaScriptLogo.astro";
+import TypeScriptLogo from "@stack/frontend/TypeScriptLogo.astro";
+import TailwindCSSLogo from "@stack/frontend/TailwindCSSLogo.astro";
+import ReactLogo from "@stack/frontend/ReactLogo.astro";
+---
+<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-800">
+    <!-- Card title -->
+    <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-neutral-700">
+            <ScreenIcon class="w-8 h-8 text-white" />
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200">Frontend Development</h3>
+    </div>
+
+    <!-- Card content -->
+    <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <HTMLLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">HTML</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <CSSLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">CSS</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <TailwindCSSLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Tailwind CSS</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <JavaScriptLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">JavaScript</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <TypeScriptLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">TypeScript</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <ReactLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">React</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+---
+import ServerIcon from "../../../assets/icons/general/ServerIcon.astro";
+import PHPLogo from "../../../assets/stack/backend/PHPLogo.astro";
+import LaravelLogo from "../../../assets/stack/backend/LaravelLogo.astro";
+import NodeLogo from "../../../assets/stack/backend/NodeLogo.astro";
+import ExpressLogo from "../../../assets/stack/backend/ExpressLogo.astro";
+import JavaLogo from "../../../assets/stack/backend/JavaLogo.astro";
+import SpringBootLogo from "../../../assets/stack/backend/SpringBootLogo.astro";
+---
+<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-800">
+    <!-- Card title -->
+    <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-neutral-700">
+            <ServerIcon class="w-8 h-8 text-white" />
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-200">Backend Development</h3>
+    </div>
+
+    <!-- Card content -->
+    <div class="grid grid-cols-2 gap-3">
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <PHPLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">PHP</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <LaravelLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Laravel</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <NodeLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Node.js</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <ExpressLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Express.js</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <JavaLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Java</span>
+        </div>
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
+            <div class="p-2 rounded-lg bg-neutral-600">
+                <SpringBootLogo class="w-8 h-8 text-purple-400" />
+            </div>
+
+            <span class="text-sm font-medium text-gray-200">Spring Boot</span>
+        </div>
+    </div>
+</div>
