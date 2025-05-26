@@ -7,7 +7,7 @@
     "baseUrl": ".",
     "paths": {
       "@icons/*": ["src/assets/icons/*"],
-      "@stack/*": ["src/assets/stack/*"],
+      "@logos/*": ["src/assets/logos/*"],
     },
     "typeRoots": ["src/types", "node_modules/@types"]
   }
