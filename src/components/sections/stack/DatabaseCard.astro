@@ -4,11 +4,11 @@ import MySQLLogo from "@logos/database/MySQLLogo.astro";
 import PostgreSQLLogo from "@logos/database/PostgreSQLLogo.astro";
 import SQLiteLogo from "@logos/database/SQLiteLogo.astro";
 ---
-<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-800">
+<div class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-900/30">
     <!-- Card title -->
     <div class="flex items-center gap-2">
-        <div class="p-2 rounded-lg bg-neutral-700">
-            <DatabaseIcon class="w-8 h-8 text-white" />
+        <div class="p-2 rounded-lg bg-neutral-500/20">
+            <DatabaseIcon class="w-7 h-7 text-neutral-400" />
         </div>
 
         <h3 class="text-xl font-bold text-gray-200">Database Management</h3>
@@ -16,26 +16,26 @@ import SQLiteLogo from "@logos/database/SQLiteLogo.astro";
 
     <!-- Card content -->
     <div class="grid grid-cols-2 gap-3">
-        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
-            <div class="p-2 rounded-lg bg-neutral-600">
-                <MySQLLogo class="w-8 h-8 text-purple-400" />
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-800/30">
+            <div class="p-2 rounded-lg bg-neutral-700/20">
+                <MySQLLogo class="w-8 h-8" />
             </div>
 
-            <span class="text-sm font-medium text-gray-200">MySQL</span>
+            <span class="text-sm font-medium text-neutral-400">MySQL</span>
         </div>
-        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
-            <div class="p-2 rounded-lg bg-neutral-600">
-                <PostgreSQLLogo class="w-8 h-8 text-purple-400" />
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-800/30">
+            <div class="p-2 rounded-lg bg-neutral-700/20">
+                <PostgreSQLLogo class="w-8 h-8" />
             </div>
 
-            <span class="text-sm font-medium text-gray-200">PostgreSQL</span>
+            <span class="text-sm font-medium text-neutral-400">PostgreSQL</span>
         </div>
-        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-700">
-            <div class="p-2 rounded-lg bg-neutral-600">
-                <SQLiteLogo class="w-8 h-8 text-purple-400" />
+        <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-800/30">
+            <div class="p-2 rounded-lg bg-neutral-700/20">
+                <SQLiteLogo class="w-8 h-8" />
             </div>
 
-            <span class="text-sm font-medium text-gray-200">SQLite</span>
+            <span class="text-sm font-medium text-neutral-400">SQLite</span>
         </div>
     </div>
 </div>
