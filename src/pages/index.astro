@@ -1,14 +1,15 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Navbar from "../components/navigation/navbar/Navbar.astro";
+import Hero from "../components/sections/hero/Hero.astro";
 import Stack from "../components/sections/stack/Stack.astro";
 ---
 
 <MainLayout>
 	<Navbar />
-	<section class="h-screen">a</section>
+	<Hero />
 	<section class="h-screen">b</section>
-	<section class="h-screen">c</section>
+	<section id="projects" class="h-screen">c</section>
 	<Stack />
 	<section class="h-screen">d</section>
 </MainLayout>

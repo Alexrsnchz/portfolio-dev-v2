@@ -1,0 +1,35 @@
+---
+import DocumentIcon from "../../../assets/icons/general/DocumentIcon.astro";
+import ArrowRightIcon from "../../../assets/icons/general/ArrowRightIcon.astro";
+import HeroLinks from "./HeroLinks.astro";
+---
+
+<section id="home">
+    <div class="flex flex-col justify-center mx-auto max-w-6xl min-h-screen">
+        <!-- Information -->
+        <div class="mb-14">
+            <span class="text-5xl font-semibold text-gray-200">Hola, soy Alex</span>
+            <h1 class="text-5xl font-bold text-purple-400 mt-3 mb-8">Desarrollador Web Full Stack</h1>
+            <p class="text-xl text-gray-300 max-w-xl">
+                Creo aplicaciones web funcionales enfocadas en el rendimiento, la estética
+                y la eficiencia, manteniendo un código limpio y fácil de mantener.
+            </p>
+        </div>
+
+        <!-- Contact & social links -->
+        <HeroLinks />
+
+        <!-- CTA buttons -->
+        <div class="flex items-center gap-5 mt-8">
+            <a href="#" target="_blank" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-neutral-700 hover:border-purple-500 hover:bg-purple-500/10 text-neutral-200 hover:text-purple-400 transition-color duration-200 ease-in-out">
+                <DocumentIcon class="w-4 h-4 text-gray-200 group-hover:text-purple-400" />
+                <span class="text-sm font-medium text-gray-200 group-hover:text-purple-400">Mi Currículum</span>
+            </a>
+
+            <a href="/#projects" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-neutral-700 hover:border-purple-500 hover:bg-purple-500/10 text-neutral-200 hover:text-purple-400 transition-color duration-200 ease-in-out">
+                <span class="text-sm font-medium text-gray-200 group-hover:text-purple-400">Ver Proyectos</span>
+                <ArrowRightIcon class="w-4 h-4 text-gray-200 group-hover:text-purple-400" />
+            </a>
+        </div>
+    </div>
+</section>
