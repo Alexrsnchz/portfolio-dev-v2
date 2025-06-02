@@ -1,0 +1,55 @@
+---
+import GitHubIcon from "@icons/general/GitHubIcon.astro";
+import ExternalLinkIcon from "@icons/general/ExternalLinkIcon.astro";
+---
+
+<article class="grid grid-cols-2 items-center gap-10">
+    <div class="overflow-hidden rounded-lg">
+        <img src="/images/mobelia_thumbnail.webp" alt="Project preview image" class="w-full h-64 object-cover" />
+    </div>
+
+    <div>
+        <h3 class="text-3xl font-semibold text-purple-400">Furniture e-commerce</h3>
+
+        <p class="mt-3 text-gray-300">
+            Modern furniture e-commerce with responsive design, shopping cart, secure
+            payments, authentication with socials, and navigation filter for products.
+        </p>
+
+        <div class="flex items-center flex-wrap gap-2 my-8 max-w-lg">
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                JavaScript
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                React
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                Tailwind CSS
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                Java
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                Spring Boot
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                PostgreSQL
+            </span>
+            <span class="px-3 py-1 rounded-full bg-purple-500/10 font-medium text-xs text-purple-400">
+                Auth0
+            </span>
+        </div>
+
+        <div class="flex items-center gap-5">
+            <a href="https://github.com/Alexrsnchz/mobelia-web" aria-label="Go to the project code" target="_blank" rel="noopener noreferrer" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-neutral-700 hover:border-purple-500 hover:bg-purple-500/10 text-neutral-200 hover:text-purple-400 transition-color duration-200 ease-in-out">
+                <GitHubIcon class="w-4 h-4 text-gray-200 group-hover:text-purple-400" />
+                <span class="text-sm font-medium text-gray-200 group-hover:text-purple-400">Código Fuente</span>
+            </a>
+
+            <a href="https://mobelia-web.vercel.app/" aria-label="Go to the project preview" target="_blank" rel="noopener noreferrer" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-neutral-700 hover:border-purple-500 hover:bg-purple-500/10 text-neutral-200 hover:text-purple-400 transition-color duration-200 ease-in-out">
+                <ExternalLinkIcon class="w-4 h-4 text-gray-200 group-hover:text-purple-400" />
+                <span class="text-sm font-medium text-gray-200 group-hover:text-purple-400">Vista Previa</span>
+            </a>
+        </div>
+    </div>
+</article>
