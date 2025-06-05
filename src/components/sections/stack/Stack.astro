@@ -5,10 +5,18 @@ import DatabaseCard from "./DatabaseCard.astro";
 import ToolsCard from "./ToolsCard.astro";
 import CloudCard from "./CloudCard.astro";
 import SecurityCard from "./SecurityCard.astro";
+import LayersIcon from "../../../assets/icons/general/LayersIcon.astro";
 ---
 
 <section id="stack">
-    <div class="grid grid-cols-3 gap-8 mx-auto max-w-5xl">
+    <!-- Section title -->
+    <div class="flex items-center gap-3 mx-auto max-w-5xl">
+        <LayersIcon class="w-8 h-8 text-gray-200" />
+        <h2 class="text-4xl font-semibold text-purple-400">Habilidades</h2>
+    </div>
+
+    <!-- Section content -->
+    <div class="grid grid-cols-3 gap-8 mx-auto max-w-5xl mt-15">
         <FrontendCard />
         <BackendCard />
         <DatabaseCard />
