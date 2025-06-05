@@ -1,5 +1,6 @@
 ---
-import './../styles/global.css';
+import '@styles/global.css';
+import Navbar from "@components/navigation/navbar/Navbar.astro";
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -26,14 +27,20 @@ import './../styles/global.css';
 
         <title>Portfolio</title>
     </head>
-    <body class="bg-gray-50 dark:bg-neutral-950">
-        <!-- Portfolio background -->
-        <div>
+    <body>
+        <!-- Site background -->
+        <div class="bg-gray-50 dark:bg-neutral-950">
             <!-- Site content -->
-            <header></header>
+            <header>
+                <Navbar />
+            </header>
+
             <main>
-                <slot />
+                <div class="mx-auto max-w-5xl">
+                    <slot />
+                </div>
             </main>
+
             <footer></footer>
         </div>
     </body>
