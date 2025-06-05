@@ -1,10 +1,18 @@
 ---
-import CalendarIcon from "../../../assets/icons/general/CalendarIcon.astro";
-import BuildingIcon from "../../../assets/icons/general/BuildingIcon.astro";
+import CaseIcon from "@icons/general/CaseIcon.astro";
+import CalendarIcon from "@icons/general/CalendarIcon.astro";
+import BuildingIcon from "@icons/general/BuildingIcon.astro";
 ---
 
 <section id="experience">
-    <div class="mx-auto max-w-5xl">
+    <!-- Section title -->
+    <div class="flex items-center gap-3">
+        <CaseIcon class="w-8 h-8 text-gray-200"/>
+        <h2 class="text-3xl font-semibold text-gray-200">Experiencia</h2>
+    </div>
+
+    <!-- Section content -->
+    <div class="mt-15">
         <!-- Experience card 1 -->
         <div>
             <!-- Timeline dot + experience date -->
@@ -12,7 +20,7 @@ import BuildingIcon from "../../../assets/icons/general/BuildingIcon.astro";
                 <div class="absolute -left-1 w-3 h-3 rounded-full bg-purple-500"></div>
 
                 <div class="flex items-center pl-10 gap-2">
-                    <CalendarIcon class="w-4 h-4 text-gray-500" />
+                    <CalendarIcon class="w-4 h-4 text-gray-500"/>
                     <span class="text-sm text-gray-400">14/05/2025 - Actualidad</span>
                 </div>
             </div>
@@ -22,8 +30,8 @@ import BuildingIcon from "../../../assets/icons/general/BuildingIcon.astro";
                 <h3 class="text-2xl font-bold text-gray-200">Técnico en Marketing Digital</h3>
 
                 <div class="flex items-center mt-2 mb-8 gap-3">
-                    <BuildingIcon class="w-4 h-4 text-purple-400" />
-                    <span class="text-lg font-semibold text-purple-400">Magical Analytics</span>
+                    <BuildingIcon class="w-4 h-4 text-purple-400"/>
+                    <span class="text-lg font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Magical Analytics</span>
                 </div>
 
                 <p class="text-gray-300 max-w-2xl">
@@ -40,7 +48,7 @@ import BuildingIcon from "../../../assets/icons/general/BuildingIcon.astro";
                 <div class="absolute -left-1 w-3 h-3 rounded-full bg-purple-500"></div>
 
                 <div class="flex items-center pl-10 gap-2">
-                    <CalendarIcon class="w-4 h-4 text-gray-500" />
+                    <CalendarIcon class="w-4 h-4 text-gray-500"/>
                     <span class="text-sm text-gray-400">18/06/2024 - 12/03/2024</span>
                 </div>
             </div>
@@ -50,14 +58,20 @@ import BuildingIcon from "../../../assets/icons/general/BuildingIcon.astro";
                 <h3 class="text-2xl font-bold text-gray-200">Desarrollador Full Stack</h3>
 
                 <div class="flex items-center mt-2 mb-8 gap-3">
-                    <BuildingIcon class="w-4 h-4 text-purple-400" />
-                    <span class="text-lg font-semibold text-purple-400">Ruano Informática</span>
+                    <BuildingIcon class="w-4 h-4 text-purple-400"/>
+                    <span class="text-lg font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Ruano Informática</span>
                 </div>
 
-                <p class="text-gray-300 max-w-2xl">
-                    • Desarrollé una aplicación web interna para la empresa que facilitó la gestión de usuarios,
-                    cursos y diplomas, así como la expedición de los mismos.
-                </p>
+                <div class="space-y-5">
+                    <p class="max-w-2xl text-gray-300">
+                        • Desarrollé una aplicación web interna para la empresa que facilitó la gestión de usuarios,
+                        cursos y diplomas, así como la expedición de los mismos.
+                    </p>
+
+                    <p class="max-w-2xl text-gray-300">
+                        • Implementé test automatizados sobre solicitudes HTTP para
+                    </p>
+                </div>
             </div>
         </div>
     </div>
