@@ -1,11 +1,7 @@
 ---
 import LayersIcon from "@icons/general/LayersIcon.astro";
-import FrontendCard from "./FrontendCard.astro";
-import BackendCard from "./BackendCard.astro";
-import DatabaseCard from "./DatabaseCard.astro";
-import ToolsCard from "./ToolsCard.astro";
-import CloudCard from "./CloudCard.astro";
-import SecurityCard from "./SecurityCard.astro";
+import StackCard from "./StackCard.astro";
+import stackData from "@data/stackData.ts";
 ---
 
 <section id="stack">
@@ -17,11 +13,8 @@ import SecurityCard from "./SecurityCard.astro";
 
     <!-- Section content -->
     <div class="grid grid-cols-3 gap-8 mt-15">
-        <FrontendCard/>
-        <BackendCard/>
-        <DatabaseCard/>
-        <CloudCard/>
-        <SecurityCard/>
-        <ToolsCard/>
+        {stackData.map(({title, icon, stack}) => (
+                <StackCard title={title} icon={icon} stack={stack}/>
+        ))}
     </div>
 </section>

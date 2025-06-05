@@ -1,0 +1,29 @@
+---
+import stackData from "@data/stackData.ts";
+---
+
+{stackData.map(({ title, icon: Icon, stack }) => (
+<article class="p-5 space-y-5 rounded-lg border border-neutral-700 bg-neutral-900/30">
+    <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-purple-500/10">
+            <Icon class="w-7 h-7 text-purple-400"/>
+        </div>
+
+        <h3 class="text-xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            {title}
+        </h3>
+    </div>
+
+    <div class="grid grid-cols-2 gap-3">
+        {stack.map(({name, logo: Logo}) => (
+                <div class="flex flex-col items-center py-3 gap-2 w-full rounded-lg bg-neutral-800/30">
+                    <div class="p-2 rounded-lg bg-neutral-700/20">
+                        <Logo class="w-8 h-8"/>
+                    </div>
+
+                    <span class="text-sm font-medium text-neutral-400">{name}</span>
+                </div>
+        ))}
+    </div>
+</article>
+    ))}
