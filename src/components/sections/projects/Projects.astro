@@ -1,9 +1,17 @@
 ---
+import CaseIcon from "@icons/general/CaseIcon.astro";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
-<section id="projects">
-    <div class="py-20">
+<section id="projects" class="py-20">
+    <!-- Section title -->
+    <div class="flex items-center gap-3">
+        <CaseIcon class="w-8 h-8 text-gray-200"/>
+        <h2 class="text-3xl font-semibold text-gray-200">Proyectos</h2>
+    </div>
+
+    <!-- Section content -->
+    <div class="mt-15">
         <ProjectCard/>
     </div>
 </section>
