@@ -1,17 +1,30 @@
 ---
-import CaseIcon from "@icons/general/CaseIcon.astro";
+import projects from "@data/projectsData.ts";
+
+import LayoutIcon from "@icons/general/LayoutIcon.astro";
 import ProjectCard from "./ProjectCard.astro";
 ---
 
 <section id="projects" class="py-20">
     <!-- Section title -->
     <div class="flex items-center gap-3">
-        <CaseIcon class="w-8 h-8 text-gray-200"/>
+        <LayoutIcon class="w-8 h-8 text-gray-200"/>
         <h2 class="text-3xl font-semibold text-gray-200">Proyectos</h2>
     </div>
 
     <!-- Section content -->
-    <div class="mt-15">
-        <ProjectCard/>
+    <div class="flex flex-col gap-20 mt-15">
+        {projects.map((item, index) => (
+            <ProjectCard
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                stack={item.stack}
+                sourceCode={item.sourceCode}
+                preview={item.preview}
+                finished={item.finished}
+                reverse={index % 2 === 1}
+            />
+        ))}
     </div>
 </section>
