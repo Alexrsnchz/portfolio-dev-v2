@@ -1,7 +1,8 @@
 ---
+import experience from "@data/experienceData.ts";
+
 import CaseIcon from "@icons/general/CaseIcon.astro";
-import TimelineSectionFirst from "./TimelineSectionFirst.astro";
-import TimelineSectionSecond from "./TimelineSectionSecond.astro";
+import TimelineSection from "./TimelineSection.astro";
 ---
 
 <section id="experience" class="py-20">
@@ -13,7 +14,14 @@ import TimelineSectionSecond from "./TimelineSectionSecond.astro";
 
     <!-- Section content -->
     <div class="mt-15">
-        <TimelineSectionFirst />
-        <TimelineSectionSecond />
+        {experience.map((item) => (
+            <TimelineSection
+                startDate={item.startDate}
+                endDate={item.endDate}
+                position={item.position}
+                company={item.company}
+                tasks={item.tasks}
+            />
+        ))}
     </div>
 </section>
