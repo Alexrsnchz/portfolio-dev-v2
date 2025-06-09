@@ -1,10 +1,14 @@
 ---
 import LayersIcon from "@icons/general/LayersIcon.astro";
-import StackCard from "./StackCard.astro";
-import stackData from "@data/stackData.ts";
+import FrontendCard from "./FrontendCard.astro";
+import BackendCard from "./BackendCard.astro";
+import DatabaseCard from "./DatabaseCard.astro";
+import CloudCard from "./CloudCard.astro";
+import SecurityCard from "./SecurityCard.astro";
+import ToolsCard from "./ToolsCard.astro";
 ---
 
-<section id="stack">
+<section id="stack" class="py-20">
     <!-- Section title -->
     <div class="flex items-center gap-3">
         <LayersIcon class="w-8 h-8 text-gray-200"/>
@@ -13,8 +17,11 @@ import stackData from "@data/stackData.ts";
 
     <!-- Section content -->
     <div class="grid grid-cols-3 gap-8 mt-15">
-        {stackData.map(({title, icon, stack}) => (
-                <StackCard title={title} icon={icon} stack={stack}/>
-        ))}
+        <FrontendCard />
+        <BackendCard />
+        <DatabaseCard />
+        <CloudCard />
+        <SecurityCard />
+        <ToolsCard />
     </div>
 </section>
