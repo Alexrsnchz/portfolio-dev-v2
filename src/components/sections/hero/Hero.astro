@@ -6,23 +6,25 @@ import HeroButtons from "./HeroButtons.astro";
 <section id="home">
     <div class="flex flex-col justify-center min-h-screen">
         <!-- Information -->
-        <div class="mb-14">
-            <span class="text-5xl font-semibold text-gray-200">Hola, soy Alex</span>
+        <div class="mb-14 text-center md:text-start">
+            <span class="text-3xl md:text-5xl font-semibold text-gray-700 dark:text-gray-200">Hola, soy Alex</span>
 
-            <h1 class="mt-3 mb-8 text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h1 class="mt-3 mb-8 text-4xl md:text-5xl font-bold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">
                 Desarrollador Web Full Stack
             </h1>
 
-            <p class="max-w-xl text-xl text-gray-300">
+            <p class="max-w-xl text-md md:text-xl text-gray-600 dark:text-gray-300">
                 Creo aplicaciones web funcionales enfocadas en el rendimiento, la estética
                 y la eficiencia, manteniendo un código limpio y fácil de mantener.
             </p>
         </div>
 
-        <!-- Contact & social links -->
-        <HeroLinks/>
+        <div class="flex flex-col items-center md:justify-start">
+            <!-- Contact & social links -->
+            <HeroLinks/>
 
-        <!-- CTA buttons -->
-        <HeroButtons/>
+            <!-- CTA buttons -->
+            <HeroButtons/>
+        </div>
     </div>
 </section>
