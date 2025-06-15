@@ -1,0 +1,90 @@
+---
+import GitHubIcon from "@icons/general/GitHubIcon.astro";
+import CopyIcon from "@icons/general/CopyIcon.astro";
+import MailIcon from "@icons/general/MailIcon.astro";
+import LinkedInIcon from "@icons/general/LinkedInIcon.astro";
+---
+
+<article class="flex flex-col gap-5 w-full">
+    <div class="flex justify-between items-center px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100/30 dark:bg-neutral-900/30">
+        <div class="flex items-center gap-4">
+            <div class="p-2 rounded-lg bg-sky-500/10 dark:bg-purple-500/10">
+                <GitHubIcon class="w-5 h-5 text-purple-400" />
+            </div>
+
+            <div>
+                <h4 class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">GitHub</h4>
+                <span class="text-gray-400">https://github.com/Alexrsnchz</span>
+            </div>
+        </div>
+
+        <button class="relative group">
+            <CopyIcon class="w-5 h-5 dark:text-gray-200 dark:group-hover:text-purple-400 transition-color duration-200 ease-in-out" />
+            <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded bg-neutral-800 text-white opacity-0 group-[.copied]:opacity-100 transition-opacity duration-300 pointer-events-none">¡Copiado!</span>
+        </button>
+    </div>
+
+    <div class="flex justify-between items-center px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100/30 dark:bg-neutral-900/30">
+        <div class="flex items-center gap-4">
+            <div class="p-2 rounded-lg bg-sky-500/10 dark:bg-purple-500/10">
+                <LinkedInIcon class="w-5 h-5 text-purple-400" />
+            </div>
+
+            <div>
+                <h4 class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">LinkedIn</h4>
+                <span class="text-gray-400">linkedin.com/in/alejandrorsnchz/</span>
+            </div>
+        </div>
+
+        <button class="relative group">
+            <CopyIcon class="w-5 h-5 dark:text-gray-200 dark:group-hover:text-purple-400 transition-color duration-200 ease-in-out" />
+            <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded bg-neutral-800 text-white opacity-0 group-[.copied]:opacity-100 transition-opacity duration-300 pointer-events-none">¡Copiado!</span>
+        </button>
+    </div>
+
+    <div class="flex justify-between items-center px-6 py-3 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100/30 dark:bg-neutral-900/30">
+        <div class="flex items-center gap-4">
+            <div class="p-2 rounded-lg bg-sky-500/10 dark:bg-purple-500/10">
+                <MailIcon class="w-5 h-5 text-purple-400" />
+            </div>
+
+            <div>
+                <h4 class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">Email</h4>
+                <span class="text-gray-400">alexrsnchz@gmail.com</span>
+            </div>
+        </div>
+
+        <button class="relative group">
+            <CopyIcon class="w-5 h-5 dark:text-gray-200 dark:group-hover:text-purple-400 transition-color duration-200 ease-in-out" />
+            <span class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded bg-neutral-800 text-white opacity-0 group-[.copied]:opacity-100 transition-opacity duration-300 pointer-events-none">¡Copiado!</span>
+        </button>
+    </div>
+</article>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const copyButtons = document.querySelectorAll("button");
+
+      copyButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const container = button.closest("div.flex.justify-between");
+          if (!container) return;
+
+          const span = container.querySelector("span");
+          if (!span) return;
+
+          const text = span.textContent?.trim();
+          if (!text) return;
+
+          navigator.clipboard.writeText(text).then(() => {
+            button.classList.add("copied");
+
+            setTimeout(() => {
+              button.classList.remove("copied");
+            }, 1500);
+          });
+        });
+      });
+    });
+</script>
+

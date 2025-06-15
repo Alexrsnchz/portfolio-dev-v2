@@ -1,11 +1,15 @@
 ---
+import ContactLinks from "./ContactLinks.astro";
+import ContactForm from "./ContactForm.astro";
 ---
 
-<section id="contact" class="py-20">
+<section id="contact" class="py-10 md:py-20">
     <!-- Section title -->
     <div class="flex flex-col items-center">
-        <span class="text-3xl font-semibold text-gray-200">¿Te gusta lo que ves?</span>
-        <h1 class="pb-2 text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Contacta conmigo</h1>
+        <span class="text-2xl md:text-3xl font-semibold text-gray-200">¿Te gusta lo que ves?</span>
+
+        <h1 class="pb-2 text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Contacta conmigo</h1>
+
         <p class="mt-8 max-w-xl text-center text-gray-300">
             Ponte en contacto conmigo a través de de mi dirección de email o mándame
             un mensaje vía la red social de LinkedIn.
@@ -13,7 +17,8 @@
     </div>
 
     <!-- Section content -->
-    <div class="mt-15">
-
+    <div class="flex flex-col md:flex-row justify-between gap-10 mt-12 md:mt-15">
+        <ContactLinks />
+        <ContactForm />
     </div>
 </section>
