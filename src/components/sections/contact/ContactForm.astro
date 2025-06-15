@@ -20,8 +20,8 @@ import PlaneIcon from "@icons/general/PlaneIcon.astro";
                 </div>
             </div>
             <div class="flex flex-col gap-3">
-                <label for="mensaje" class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="escribe aquí tu mensaje..." class="px-4 py-2 w-full rounded-lg border border-gray-300 dark:border-neutral-700 focus:outline-none dark:focus:border-purple-400 bg-gray-100/30 dark:bg-neutral-900/30 placeholder-gray-400 text-gray-400"></textarea>
+                <label for="message" class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">Mensaje</label>
+                <textarea id="message" name="message" rows="5" placeholder="escribe aquí tu mensaje..." class="px-4 py-2 w-full rounded-lg border border-gray-300 dark:border-neutral-700 focus:outline-none dark:focus:border-purple-400 bg-gray-100/30 dark:bg-neutral-900/30 placeholder-gray-400 text-gray-400"></textarea>
             </div>
             <button type="submit" class="flex justify-center items-center px-5 py-2.5 gap-3 w-full rounded-md group border border-gray-600 dark:border-neutral-700 hover:border-amber-400 dark:hover:border-purple-500 hover:bg-amber-400/10 dark:hover:bg-purple-500/10 transition-color duration-200 ease-in-out">
                 <PlaneIcon class="w-5 h-5 dark:text-gray-200 dark:group-hover:text-purple-400" />
@@ -45,7 +45,7 @@ import PlaneIcon from "@icons/general/PlaneIcon.astro";
 
             const emailInput = form.querySelector("#email") as HTMLInputElement | null;
             const subjectInput = form.querySelector("#subject") as HTMLInputElement | null;
-            const messageInput = form.querySelector("#mensaje") as HTMLTextAreaElement | null;
+            const messageInput = form.querySelector("#message") as HTMLTextAreaElement | null;
 
             if (!emailInput || !subjectInput || !messageInput) {
                 statusMsg.textContent = "Error interno: no se encontraron los campos.";
