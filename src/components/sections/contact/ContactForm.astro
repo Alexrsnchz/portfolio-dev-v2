@@ -7,6 +7,7 @@ import PlaneIcon from "@icons/general/PlaneIcon.astro";
         <div class="w-full text-center">
             <span class="text-2xl font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">Envíame un correo</span>
         </div>
+
         <form id="contact-form" class="space-y-5 mt-8">
             <div class="flex items-center gap-5">
                 <div class="flex flex-col gap-3">
@@ -22,21 +23,68 @@ import PlaneIcon from "@icons/general/PlaneIcon.astro";
                 <label for="mensaje" class="font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">Mensaje</label>
                 <textarea id="mensaje" name="mensaje" rows="5" placeholder="escribe aquí tu mensaje..." class="px-4 py-2 w-full rounded-lg border border-gray-300 dark:border-neutral-700 focus:outline-none dark:focus:border-purple-400 bg-gray-100/30 dark:bg-neutral-900/30 placeholder-gray-400 text-gray-400"></textarea>
             </div>
-            <button class="flex justify-center items-center px-5 py-2.5 gap-3 w-full rounded-md group border border-gray-600 dark:border-neutral-700 hover:border-amber-400 dark:hover:border-purple-500 hover:bg-amber-400/10 dark:hover:bg-purple-500/10 transition-color duration-200 ease-in-out">
+            <button type="submit" class="flex justify-center items-center px-5 py-2.5 gap-3 w-full rounded-md group border border-gray-600 dark:border-neutral-700 hover:border-amber-400 dark:hover:border-purple-500 hover:bg-amber-400/10 dark:hover:bg-purple-500/10 transition-color duration-200 ease-in-out">
                 <PlaneIcon class="w-5 h-5 dark:text-gray-200 dark:group-hover:text-purple-400" />
                 <span class="font-medium dark:text-gray-200 dark:group-hover:text-purple-400">Enviar correo</span>
             </button>
         </form>
-        <div class="mt-5">
-            <p class="text-xs font-medium text-center text-gray-400">
-                Ten en cuenta que este formulario genera un email pre-escrito en tu cliente de correo.
-                Si no está configurado en tu dispositivo no se abrirá.
-            </p>
-        </div>
+
+        <p id="status-message" class="mt-4 text-center text-sm font-medium text-gray-400"></p>
     </div>
 </article>
 
 <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form") as HTMLFormElement | null;
+        const statusMsg = document.getElementById("status-message") as HTMLParagraphElement | null;
 
+        if (!form || !statusMsg) return;
+
+        form.addEventListener("submit", async (e: SubmitEvent) => {
+            e.preventDefault();
+
+            const emailInput = form.querySelector("#email") as HTMLInputElement | null;
+            const subjectInput = form.querySelector("#subject") as HTMLInputElement | null;
+            const messageInput = form.querySelector("#mensaje") as HTMLTextAreaElement | null;
+
+            if (!emailInput || !subjectInput || !messageInput) {
+                statusMsg.textContent = "Error interno: no se encontraron los campos.";
+                statusMsg.className = "text-center text-sm font-medium text-red-400";
+                return;
+            }
+
+            const email = emailInput.value.trim();
+            const subject = subjectInput.value.trim();
+            const message = messageInput.value.trim();
+
+            if (!email || !subject || !message) {
+                statusMsg.textContent = "Por favor, completa todos los campos.";
+                statusMsg.className = "text-center text-sm font-medium text-red-400";
+                return;
+            }
+
+            statusMsg.textContent = "Enviando...";
+            statusMsg.className = "text-center text-sm font-medium text-gray-400";
+
+            try {
+                const response = await fetch("https://mailer-backend-eand.vercel.app/api/mailer", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ email, subject, message }),
+                });
+
+                if (!response.ok) throw new Error("Error al enviar");
+
+                form.reset();
+                statusMsg.textContent = "Correo enviado correctamente.";
+                statusMsg.className = "text-center text-sm font-medium text-green-400";
+            } catch {
+                statusMsg.textContent = "Error al enviar el correo. Intenta más tarde.";
+                statusMsg.className = "text-center text-sm font-medium text-red-400";
+            }
+        });
+    });
 </script>
 
