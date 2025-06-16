@@ -33,7 +33,24 @@ export const translations = {
       securityCardTitle: "Seguridad y Testeo",
       toolsCardTitle: "Herramientas",
     },
-    contact: {},
+    contact: {
+      subtitle: "¿Te gusta lo que ves?",
+      title: "Contacta conmigo",
+      message:
+        "Ponte en contacto conmigo a través de de mi dirección de email o mándame un mensaje vía la red social de LinkedIn.",
+      copyButton: "¡Copiado!",
+      locationTitle: "Ubicación",
+      locationCountry: "España",
+      locationSubtext: "Disponible para trabajo remoto o reubicación.",
+      availabilityTitle: "Disponibilidad",
+      availabilityHours: "Disponible",
+      availabilitySubtext: "Respondo mensajes en 24 - 48 horas.",
+      formTitle: "Envíame un correo",
+      formSubject: "Asunto",
+      formMessage: "Mensaje",
+      formAreaPlaceholder: "Escribe aquí tu mensaje...",
+      formButton: "Enviar correo",
+    },
   },
   en: {
     nav: {
@@ -69,7 +86,24 @@ export const translations = {
       securityCardTitle: "Security & Testing",
       toolsCardTitle: "Developer Tools",
     },
-    contact: {},
+    contact: {
+      subtitle: "¿Like what you see?",
+      title: "Get in touch",
+      message:
+        "Contact me through my email address or send me a message through LikedIn social media.",
+      copyButton: "Copied!",
+      locationTitle: "Location",
+      locationCountry: "Spain",
+      locationSubtext: "Available for remote work or relocation.",
+      availabilityTitle: "Availability",
+      availabilityHours: "Available",
+      availabilitySubtext: "I reply to messages in 24 - 48 hours.",
+      formTitle: "Send me a message",
+      formSubject: "Subject",
+      formMessage: "Message",
+      formAreaPlaceholder: "Write here your message...",
+      formButton: "Send email",
+    },
   },
 } as const;
 
