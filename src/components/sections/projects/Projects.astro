@@ -3,18 +3,23 @@ import projects from "@data/projectsData.ts";
 
 import LayoutIcon from "@icons/general/LayoutIcon.astro";
 import ProjectCard from "./ProjectCard.astro";
+import type {ProjectProps, LangProps} from "../../../types/types";
+
+const { lang, t } = Astro.props as LangProps;
+
+const projectsList: ProjectProps[] = projects[lang];
 ---
 
 <section id="projects" class="py-10 md:py-20">
     <!-- Section title -->
     <div class="flex items-center gap-3">
         <LayoutIcon class="w-6 md:w-8 h-6 md:h-8 text-gray-700 dark:text-gray-200" />
-        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">Proyectos</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">{t.projects.sectionTitle}</h2>
     </div>
 
     <!-- Section content -->
     <div class="flex flex-col gap-15 md:gap-20 mt-12 md:mt-15">
-        {projects.map((item, index) => (
+        {projectsList.map((item, index) => (
             <ProjectCard
                 image={item.image}
                 title={item.title}
@@ -24,6 +29,7 @@ import ProjectCard from "./ProjectCard.astro";
                 preview={item.preview}
                 finished={item.finished}
                 reverse={index % 2 === 1}
+                t={t}
             />
         ))}
     </div>

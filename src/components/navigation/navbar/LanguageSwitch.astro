@@ -1,34 +1,42 @@
 ---
-import LanguageIcon from "../../../assets/icons/general/LanguageIcon.astro";
-import ChevronDownIcon from "../../../assets/icons/general/ChevronDownIcon.astro";
-import EsFlagIcon from "../../../assets/icons/flags/EsFlagIcon.astro";
-import UsFlagIcon from "../../../assets/icons/flags/UsFlagIcon.astro";
+import LanguageIcon from "@icons/general/LanguageIcon.astro";
+import ChevronDownIcon from "@icons/general/ChevronDownIcon.astro";
+import EsFlagIcon from "@icons/flags/EsFlagIcon.astro";
+import UsFlagIcon from "@icons/flags/UsFlagIcon.astro";
+
+const { lang } = Astro.props;
 ---
 
 <div id="language-button" class="flex items-center relative space-x-1 cursor-pointer">
-    <LanguageIcon class="w-5 h-5 text-gray-800 dark:text-gray-200" />
-    <span class="text-sm font-medium text-gray-800 dark:text-gray-200">ES</span>
+    <LanguageIcon class="w-4 md:w-5 h-4 md:h-5 text-gray-800 dark:text-gray-200" />
+    <span class="text-xs md:text-sm font-medium text-gray-800 dark:text-gray-200 uppercase">{lang}</span>
     <ChevronDownIcon id="chevron-icon" class="mt-0.75 w-4 h-4 text-gray-800 dark:text-gray-200 transition-transform duration-200 ease-in-out" />
 
     <div id="language-menu" class="hidden absolute top-full mt-3 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100 dark:bg-neutral-900">
         <ul>
             <li class="rounded-t-lg hover:bg-gray-200 dark:hover:bg-neutral-800">
-                <a href="#" aria-label="Go to spanish section" class="flex items-center px-3 py-2 space-x-2">
-                    <EsFlagIcon class="w-6 h-6" />
-                    <span class="font-medium text-gray-800 dark:text-gray-200">Español</span>
-                </a>
+                <button id="btn-es" aria-label="Go to spanish section" class="flex items-center px-3 py-2 space-x-2">
+                    <EsFlagIcon class="w-5 md:w-6 h-5 md:h-6" />
+                    <span class="text-sm md:text-md font-medium text-gray-800 dark:text-gray-200">Español</span>
+                </button>
             </li>
             <li class="rounded-b-lg hover:bg-gray-200 dark:hover:bg-neutral-800">
-                <a href="#" aria-label="Go to the english section" class="flex items-center px-3 py-2 space-x-2">
-                    <UsFlagIcon class="w-6 h-6" />
-                    <span class="font-medium text-gray-800 dark:text-gray-200">English</span>
-                </a>
+                <button id="btn-en" aria-label="Go to the english section" class="flex items-center px-3 py-2 space-x-2">
+                    <UsFlagIcon class="w-5 md:w-6 h-5 md:h-6" />
+                    <span class="text-sm md:text-md font-medium text-gray-800 dark:text-gray-200">English</span>
+                </button>
             </li>
         </ul>
     </div>
 </div>
 
 <script>
+    function changeLang(lang: string) {
+        localStorage.setItem('lang', lang);
+        document.cookie = `lang=${lang}; path=/`;
+        location.reload();
+    }
+
     // Obtains the button, menu, and icon elements
     const languageButton = document.getElementById('language-button');
     const languageMenu = document.getElementById('language-menu');
@@ -48,5 +56,17 @@ import UsFlagIcon from "../../../assets/icons/flags/UsFlagIcon.astro";
             languageMenu?.classList.add('hidden');
             chevronIcon?.classList.remove('rotate-180');
         }
+    });
+
+    const btnEs = document.getElementById('btn-es');
+    const btnEn = document.getElementById('btn-en');
+
+    btnEs?.addEventListener('click', () => {
+        changeLang('es');
+        console.log(Astro.cookies.get('lang'))
+    });
+    btnEn?.addEventListener('click', () => {
+        changeLang('en');
+        console.log(Astro.cookies.get('lang'))
     });
 </script>

@@ -2,9 +2,11 @@
 import '@styles/global.css';
 import Navbar from "@components/navigation/navbar/Navbar.astro";
 import Footer from "@components/navigation/footer/Footer.astro";
+
+const { lang, t } = Astro.props;
 ---
 
-<html lang="es" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
     <head>
         <!-- Saved theme selector -->
         <script>
@@ -33,7 +35,7 @@ import Footer from "@components/navigation/footer/Footer.astro";
         <div class="bg-gray-50 dark:bg-neutral-950">
             <!-- Site content -->
             <header>
-                <Navbar />
+                <Navbar lang={lang} t={t} />
             </header>
 
             <main>

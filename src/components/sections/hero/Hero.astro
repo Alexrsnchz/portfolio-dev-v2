@@ -1,21 +1,22 @@
 ---
 import HeroLinks from "./HeroLinks.astro";
 import HeroButtons from "./HeroButtons.astro";
+
+const { lang, t } = Astro.props;
 ---
 
 <section id="home">
     <div class="flex flex-col justify-center min-h-screen">
         <!-- Information -->
         <div class="mb-14 text-center md:text-start">
-            <span class="text-3xl md:text-5xl font-semibold text-gray-700 dark:text-gray-200">Hola, soy Alex</span>
+            <span class="text-3xl md:text-5xl font-semibold text-gray-700 dark:text-gray-200">{t.hero.subtitle}</span>
 
             <h1 class="mt-3 mb-8 text-4xl md:text-5xl font-bold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">
-                Desarrollador Web Full Stack
+                {t.hero.title}
             </h1>
 
             <p class="max-w-xl text-md md:text-xl text-gray-600 dark:text-gray-300">
-                Creo aplicaciones web funcionales enfocadas en el rendimiento, la estética
-                y la eficiencia, manteniendo un código limpio y fácil de mantener.
+                {t.hero.introduction}
             </p>
         </div>
 
@@ -24,7 +25,7 @@ import HeroButtons from "./HeroButtons.astro";
             <HeroLinks/>
 
             <!-- CTA buttons -->
-            <HeroButtons/>
+            <HeroButtons lang={lang} t={t} />
         </div>
     </div>
 </section>

@@ -5,12 +5,17 @@ import Experience from "@components/sections/experience/Experience.astro";
 import Projects from "@components/sections/projects/Projects.astro";
 import Stack from "@components/sections/stack/Stack.astro";
 import Contact from "@components/sections/contact/Contact.astro";
+
+import { translations, type Lang } from '@lang/i18n';
+
+const lang = (Astro.cookies.get('lang')?.value || 'en') as Lang;
+const t = translations[lang];
 ---
 
-<MainLayout>
-    <Hero/>
-    <Experience/>
-    <Projects/>
-    <Stack/>
-    <Contact />
+<MainLayout lang={lang} t={t}>
+    <Hero lang={lang} t={t} />
+    <Experience lang={lang} t={t} />
+    <Projects lang={lang} t={t} />
+    <Stack t={t} />
+    <Contact t={t} />
 </MainLayout>

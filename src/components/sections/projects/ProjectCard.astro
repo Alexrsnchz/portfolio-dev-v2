@@ -5,6 +5,7 @@ import GitHubIcon from "@icons/general/GitHubIcon.astro";
 import ExternalLinkIcon from "@icons/general/ExternalLinkIcon.astro";
 
 const { image, title, description, stack, sourceCode, preview, finished, reverse } = Astro.props as ProjectProps;
+const { t } = Astro.props;
 ---
 
 <article class=`flex ${reverse ? "md:flex-row-reverse" : ""} flex-col md:flex-row items-stretch gap-6`>
@@ -17,7 +18,7 @@ const { image, title, description, stack, sourceCode, preview, finished, reverse
 
     <!-- Content section -->
     <div class="flex flex-col justify-center w-full md:w-1/2">
-        {!finished && <span class="text-sm md:text-md text-gray-600 dark:text-gray-300">🚧 En desarrollo... 🚧</span>}
+        {!finished && <span class="text-sm md:text-md text-gray-600 dark:text-gray-300">🚧 {t.projects.finished} 🚧</span>}
 
         <h3 class="text-xl md:text-2xl font-semibold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">
             {title}
@@ -38,12 +39,16 @@ const { image, title, description, stack, sourceCode, preview, finished, reverse
         <div class="flex items-center gap-4">
             <a href={sourceCode} aria-label="Go to the project code" target="_blank" rel="noopener noreferrer" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-gray-600 dark:border-neutral-700 hover:border-sky-300 dark:hover:border-purple-500 hover:bg-sky-300/10 dark:hover:bg-purple-500/10 transition-color duration-200 ease-in-out">
                 <GitHubIcon class="w-4 h-4 text-gray-600 dark:text-gray-200 group-hover:text-sky-300 dark:group-hover:text-purple-400" />
-                <span class="text-sm font-medium text-gray-600 dark:text-gray-200 group-hover:text-sky-300 dark:group-hover:text-purple-400">Código Fuente</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-200 group-hover:text-sky-300 dark:group-hover:text-purple-400">
+                    {t.projects.codeButton}
+                </span>
             </a>
 
             <a href={preview} aria-label="Go to the project preview" target="_blank" rel="noopener noreferrer" class="flex items-center px-5 py-2.5 gap-2 rounded-md group border border-gray-600 dark:border-neutral-700 hover:border-amber-400 dark:hover:border-purple-500 hover:bg-amber-400/10 dark:hover:bg-purple-500/10 transition-color duration-200 ease-in-out">
                 <ExternalLinkIcon class="w-4 h-4 text-gray-600 dark:text-gray-200 group-hover:text-amber-400 dark:group-hover:text-purple-400" />
-                <span class="text-sm font-medium text-gray-600 dark:text-gray-200 group-hover:text-amber-400 dark:group-hover:text-purple-400">Vista Previa</span>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-200 group-hover:text-amber-400 dark:group-hover:text-purple-400">
+                    {t.projects.previewButton}
+                </span>
             </a>
         </div>
     </div>

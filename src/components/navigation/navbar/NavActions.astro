@@ -1,9 +1,11 @@
 ---
 import ThemeSwitch from "./ThemeSwitch.astro";
 import LanguageSwitch from "./LanguageSwitch.astro";
+
+const { lang } = Astro.props;
 ---
 
-<div class="flex items-center gap-8">
+<div class="flex items-center gap-6 md:gap-8">
     <ThemeSwitch />
-    <LanguageSwitch />
+    <LanguageSwitch lang={lang} />
 </div>

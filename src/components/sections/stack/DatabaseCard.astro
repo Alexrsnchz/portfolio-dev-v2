@@ -4,6 +4,8 @@ import MySQLLogo from "@logos/database/MySQLLogo.astro";
 import PostgreSQLLogo from "@logos/database/PostgreSQLLogo.astro";
 import SQLiteLogo from "@logos/database/SQLiteLogo.astro";
 import PrismaLogo from "@logos/database/PrismaLogo.astro";
+
+const { t } = Astro.props;
 ---
 
 <article class="p-5 space-y-5 rounded-lg border border-gray-300 dark:border-neutral-700 bg-gray-100/30 dark:bg-neutral-900/30">
@@ -13,7 +15,7 @@ import PrismaLogo from "@logos/database/PrismaLogo.astro";
         </div>
 
         <h3 class="text-xl font-bold bg-gradient-to-r from-sky-300 dark:from-purple-500 via-rose-300 dark:via-pink-500 to-amber-400 dark:to-pink-500 bg-clip-text text-transparent">
-            Database Management
+            {t.stack.databaseCardTitle}
         </h3>
     </div>
 

@@ -13,6 +13,9 @@
       "@styles/*": [
         "src/styles/*"
       ],
+      "@lang/*": [
+        "src/assets/i18n/*"
+      ],
       "@components/*": [
         "src/components/*"
       ],

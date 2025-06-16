@@ -6,22 +6,24 @@ import DatabaseCard from "./DatabaseCard.astro";
 import CloudCard from "./CloudCard.astro";
 import SecurityCard from "./SecurityCard.astro";
 import ToolsCard from "./ToolsCard.astro";
+
+const { t } = Astro.props;
 ---
 
 <section id="stack" class="py-10 md:py-20">
     <!-- Section title -->
     <div class="flex items-center gap-3">
         <LayersIcon class="w-6 md:w-8 h-6 md:h-8 text-gray-700 dark:text-gray-200" />
-        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">Habilidades</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-200">{t.stack.sectionTitle}</h2>
     </div>
 
     <!-- Section content -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 md:mt-15">
-        <FrontendCard />
-        <BackendCard />
-        <DatabaseCard />
-        <CloudCard />
-        <SecurityCard />
-        <ToolsCard />
+        <FrontendCard t={t} />
+        <BackendCard t={t} />
+        <DatabaseCard t={t} />
+        <CloudCard t={t} />
+        <SecurityCard t={t} />
+        <ToolsCard t={t} />
     </div>
 </section>

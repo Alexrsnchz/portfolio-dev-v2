@@ -1,3 +1,15 @@
+export interface LangProps {
+  lang: "es" | "en";
+  t: {
+    experience: {
+      sectionTitle: string;
+    };
+    projects: {
+      sectionTitle: string;
+    };
+  };
+}
+
 export interface ExperienceProps {
   startDate: string;
   endDate: string;
@@ -14,5 +26,5 @@ export interface ProjectProps {
   sourceCode: string;
   preview: string;
   finished: boolean;
-  reverse: boolean;
+  reverse?: boolean;
 }
